@@ -1,26 +1,66 @@
-const yesButton = document.getElementById("yesButton");
-const noButton = document.getElementById("noButton");
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+
+const welcomeScreen = document.getElementById("welcomeScreen");
+const choiceScreen = document.getElementById("choiceScreen");
+const matterScreen = document.getElementById("matterScreen");
+
 
 // ================================
-// NO BUTTON RUNS AWAY
+// NO BUTTON RUNS AWAY 😏
 // ================================
 
-noButton.addEventListener("mouseover", function () {
+noBtn.addEventListener("mouseover", function () {
 
-    const screen = document.querySelector(".question-screen");
-
-    const maxX = screen.clientWidth - noButton.offsetWidth - 20;
-    const maxY = screen.clientHeight - noButton.offsetHeight - 20;
+    const maxX = window.innerWidth - noBtn.offsetWidth - 30;
+    const maxY = window.innerHeight - noBtn.offsetHeight - 30;
 
     const randomX = Math.random() * maxX;
     const randomY = Math.random() * maxY;
 
-    noButton.style.position = "absolute";
-    noButton.style.left = randomX + "px";
-    noButton.style.top = randomY + "px";
+    noBtn.style.position = "fixed";
+    noBtn.style.left = randomX + "px";
+    noBtn.style.top = randomY + "px";
 
 });
 
+
+// ================================
+// YES → CHOICE SCREEN ❤️
+// ================================
+
+// ================================
+// HAPPY BUTTON 🥰
+// ================================
+
+const happyBtn = document.getElementById("happyBtn");
+const sadBtn = document.getElementById("sadBtn");
+
+happyBtn.addEventListener("click", function () {
+
+    choiceScreen.classList.add("hidden");
+    matterScreen.classList.remove("hidden");
+
+    document.getElementById("matterText").innerHTML = `
+
+        Naku telusu nuvu vasthavu ani... ❤️
+        <br><br>
+
+        Daa veli okasari nuvu nenu ela kalusukunamo
+        gurthu chestha...
+
+        <br><br>
+
+        Where It All Began... 💕
+        <br><br>
+
+        Every beautiful story has a beginning...
+        <br><br>
+
+        And ours began in college. ❤️
+
+        <br><br>
+});
 // ================================
 // YES BUTTON
 // ================================
@@ -400,7 +440,6 @@ finalButton.addEventListener("click", function () {
     const videoNoButton =
         document.getElementById("videoNoButton");
 
-
     // ================================
     // VIDEO YES
     // ================================
@@ -435,7 +474,6 @@ videoYesButton.addEventListener("click", function () {
         </button>
 
     `;
-
 
     // ================================
     // NEXT → WAIT PAGE
@@ -493,7 +531,6 @@ videoYesButton.addEventListener("click", function () {
     });
 
 });
-
 
                                     });
 
@@ -564,4 +601,6 @@ noButton.addEventListener("mouseover", function () {
     noButton.style.left = randomX + "px";
     noButton.style.top = randomY + "px";
 
+});
+    `;
 });
